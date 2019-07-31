@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Service\WarExecutor;
+use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,7 +15,9 @@ class MainController extends AbstractController
     /**
      * @Route("/", name="app_home")
      * @param Request $request
+     * @param WarExecutor $executor service for generating and executing war between armies
      * @return Response
+     * @throws Exception
      */
     public function home(Request $request, WarExecutor $executor)
     {

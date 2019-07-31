@@ -24,8 +24,6 @@ class MainController extends AbstractController
             throw new BadRequestHttpException('Missing or incorrect parameters!');
         }
 
-        $executor->executeBattle($armyOne, $armyTwo);
-
-        return new Response($armyOne . " " . $armyTwo);
+        return new Response($executor->executeBattle($armyOne, $armyTwo));
     }
 }
